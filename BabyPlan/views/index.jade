@@ -1,11 +1,12 @@
 extends layout
-
+block head
+            link(href='dist/css/bootstrap-switch.css', type='text/css', rel="stylesheet")
 block content
   h1= title
-  p 电脑当前状态 
-    div(class="switch" data-on="danger" data-off="primary")
-       input(type="checkbox" checked)
   div.container
+      div.row
+            div.switch.has-switch(data-on-label="关机" data-off-label="开机")
+                  input(type="checkbox"  checked  name='check')           
       div.row
           div.col-xs-6.col-md-4 
              button( type="button" class="btn btn-primary") 关闭网络 
@@ -14,5 +15,9 @@ block content
           div.col-xs-6.col-md-4 
              button( type="button" class="btn btn-danger") 关闭游戏
       div.row
-         div.switch.switch-large(data-on="danger",data-off="primary")
-            input(type="checkbox" checked)
+      
+       script(src="dist/js/bootstrap-switch.js") 
+       script.
+                      $("[name='check']").bootstrapSwitch();    
+       script.
+             $('#switch').on('switch-change', function (e, data) {   var $el = $(data.el)  , value = data.value;  console.log(e, $el, value);});
