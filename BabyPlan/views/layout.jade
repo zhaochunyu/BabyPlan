@@ -3,13 +3,11 @@ doctype html
 head(lang="zh-cn")
      mate( charset="utf-8" )
      meta(name="viewport",content="width=device-width, initial-scale=1.0")
-     title 'BabyPlan'
+     title 'pretty_online'
      link(href='stylesheets/style.css', type='text/css', rel="stylesheet")
-     link(href='dist/css/bootstrap.css', type='text/css', rel="stylesheet")    
+     link(href='dist/css/bootstrap.css', type='text/css', rel="stylesheet")
+     link(href='dist/css/bootstrap-switch.css', type='text/css', rel="stylesheet")
      link(href='dist/css/sticky-footer-navbar.css',type='text/css', rel="stylesheet")
-     script(src="dist/js/bootstrap.min.js")
-     script(src="dist/js/jquery-2.0.0.min.js")
-     block head
    body
     div#wrap
         div.navbar.navbar-default.navbar-fixed-top(role="navigation")
@@ -34,7 +32,9 @@ head(lang="zh-cn")
         div.container
             address
                   a(href="mailto:zwl0017@163.com") chunyu.zhao 
-                  p 二〇一四年五月二十六日  
-   
+                  p 二〇一四年五月二十六日 
+    script(type='text/javascript',src="dist/js/jquery.min.js")
+    script(type='text/javascript',src="dist/js/bootstrap.min.js")
+   script(type='text/javascript',src="dist/js/bootstrap-switch.js") 
 
     block extjs

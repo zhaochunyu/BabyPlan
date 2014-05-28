@@ -1,34 +1,18 @@
 extends layout
-block head
-            link(href='dist/css/bootstrap-switch.css', type='text/css', rel="stylesheet")
+
 block content
   h1= title
+  p 电脑当前状态 
+    div(class="switch" data-on="danger" data-off="primary")
+       input(type="checkbox" checked)
   div.container
       div.row
-             div.col-lg-5
-                p 当前电脑状态: 
-                  div.switch.has-switch
-                        input(type="checkbox"  checked  name='check' data-on-text="关机" data-off-text="开机")           
+          div.col-xs-6.col-md-4 
+             button( type="button" class="btn btn-primary") 关闭网络 
+          div.col-xs-6.col-md-4 
+             button( type="button" class="btn btn-info") 电脑锁频
+          div.col-xs-6.col-md-4 
+             button( type="button" class="btn btn-danger") 关闭游戏
       div.row
-          div.col-lg-10
-                div.col-xs-6.col-md-2 
-                       button( type="button" class="btn btn-primary") 重启电脑 
-                div.col-xs-6.col-md-2
-                        button( type="button" class="btn btn-info") 电脑锁屏
-                div.col-xs-6.col-md-2 
-                        button( type="button" class="btn btn-success") 禁止网络
-      p
-      div.row
-          div.col-lg-10
-                div.col-xs-6.col-md-3 
-                        button( type="button" class="btn btn-warning") 禁止网络游戏
-                div.col-xs-6.col-md-3
-                        button( type="button" class="btn btn-danger") 禁止单机游戏
-
-      div.row
-      
-       script(src="dist/js/bootstrap-switch.js") 
-       script.
-                      $("[name='check']").bootstrapSwitch();    
-       script.
-             $('#switch').on('switch-change', function (e, data) {   var $el = $(data.el)  , value = data.value;  console.log(e, $el, value);});
+         div.switch.switch-large(data-on="danger",data-off="primary")
+            input(type="checkbox" checked)
