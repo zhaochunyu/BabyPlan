@@ -17,5 +17,10 @@ module.exports = function(app) {
 			title : 'BabyPlan',
 		});
 	});
+		app.get('/home', function(req, res) { 
+		res.render('home', { 
+			title : 'BabyPlan',
+		});
+	});
 	
 }

@@ -7,6 +7,7 @@ head(lang="zh-cn")
      link(href='stylesheets/style.css', type='text/css', rel="stylesheet")
      link(href='dist/css/bootstrap.css', type='text/css', rel="stylesheet")
      link(href='dist/css/sticky-footer-navbar.css',type='text/css', rel="stylesheet")
+     link(href='dist/css/bootstrap-combined.min.css',type='text/css', rel="stylesheet")
      script(type='text/javascript',src="dist/js/jquery.min.js")
      script(type='text/javascript',src="dist/js/bootstrap.min.js")
      script(type='text/javascript',src="dist/js/bootstrap-switch.js")
@@ -20,16 +21,23 @@ head(lang="zh-cn")
                     a.navbar-brand(href="/index") BabyPlan
                 div.collapse.navbar-collapse
                     ui.nav.navbar-nav
-                       li: a(href="/index") 首页
+                       li: a(href="/home") 首页
                        li: a(href="/") 设置
                        li.dropdown: a.dropdown-toggle(data-toggle="dropdown",href="") 帮 助
                                       b.caret
                                       ul.dropdown-menu
                                          li: a(href="/log/help.txt",target="_blank") 使用说明                                        
                                          li: a(href="/log/about.txt",target="_blank") 关于我们
+                    
                     ui.nav.navbar-nav.navbar-right
-                       li: a(href='/logout') 退出
-                       li: a 上次登录：2014年5月26日
+                       li: form.form-inline(role='form')
+                                     .form-group
+                                       input#exampleInputEmail2.form-control(type='email',style="height: 30px;", placeholder='用户名')
+                                     .form-group
+                                       input#exampleInputPassword2.form-control(type='password',style="height: 30px;", placeholder='密码')
+                                     a(href='/login') 登录
+                       li: a(href='/logout') #{islogin}
+                       li: a #{msg}
         block content
 
     div#footer
