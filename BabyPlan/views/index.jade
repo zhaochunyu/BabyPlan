@@ -1,77 +1,174 @@
-extends layout
-block head
-            link(href='dist/css/bootstrap-switch.css', type='text/css', rel="stylesheet")
-block content
-  h1= title
-  div.container
-   div.row
-    div.col-lg-5
-                 div.switch.has-switch 设备A:
-                        input(type="checkbox"  checked  name='check' data-on-text="已开启" data-off-text="已关闭")           
-   div.row
-    div.col-lg-8
-     div.table-responsive
-      table.table.table-bordered.table-striped
-        colgroup
-          col.col-xs-1
-          col.col-xs-8
-          col.col-xs-4
-          col.col-xs-1
-        thead
-          tr
-            th 功能
-            th 描述
-            th 状态
-            th 功能
-        tbody
-          tr
-            td
-              button( type="button" class="btn btn-primary" id="reboot") 重启电脑
-            td
-              点击电脑将重新启动
-            td
-             a#rebootmes
-            td
-              button( type="button" class="btn btn-primary" id="close" style="margin:3% ;color: #C7D225;background-color: #6E4ED7") 关闭电脑  
-          tr
-            td
-              button( type="button" class="btn btn-info" id="lockscreen") 电脑锁屏
-            td
-              点击电脑将锁屏，锁屏密码将在右端显示，也可使用电脑解锁
-            td
-              a#screenmes 
-            td
-              button( type="button" class="btn btn-primary" id="openscreen" style="margin:3% ;color: #C7D225;background-color: #6E4ED7") 解锁电脑                 
-          tr
-            td
-              button( type="button" class="btn btn-success" id="nonetwork") 禁止网络
-            td
-              点击电脑将无法上网。将禁止所有网络功能。
-            td
-              a#networkmes
-            td
-              button( type="button" class="btn btn-success" id="network" style="margin:3% ;color: #C7D225;background-color: #6E4ED7") 开启网络  
-          tr
-            td
-              button( type="button" class="btn btn-warning" id="nolinegame") 禁止网络游戏
-            td
-              可正常上网，但无法玩网络游戏，也无法玩网页版游戏。
-            td
-              a#linegamemes
-            td
-              button( type="button" class="btn btn-warning" id="linegame" style="margin:3% ;color: #C7D225;background-color: #6E4ED7") 允许网络游戏          
-          tr
-            td
-              button( type="button" class="btn btn-danger" id="nosinglegame") 禁止单机游戏
-            td
-              电脑中的单机游戏将无法玩。
-            td
-              a#singlegamemes
-            td
-              button( type="button" class="btn btn-danger" id="singlegame" style="margin:3% ;color: #C7D225;background-color: #6E4ED7") 允许单机游戏    
-        script(src="dist/js/bootstrap-switch.js")
-        script(type='text/javascript',src="dist/js/doit.js") 
-        script.
-                      $("[name='check']").bootstrapSwitch();    
-        script.
-             $('#switch').on('switch-change', function (e, data) {   var $el = $(data.el)  , value = data.value;  console.log(e, $el, value);});
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='image/favicon.ico')
+    title Carousel Template for Bootstrap
+    link(href='dist/css/bootstrap.min.css', rel='stylesheet')
+    script(src='dist/js/ie8-responsive-file-warning.js')
+    script(src='dist/js/ie-emulation-modes-warning.js')
+    link(href="dist/css/carousel.css" rel="stylesheet")
+    style#holderjs-style(type='text/css')
+ body
+   .navbar-wrapper
+     .container
+       .navbar.navbar-inverse.navbar-static-top(role='navigation')
+         .container
+           .navbar-header
+             button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+               span.sr-only Toggle navigation
+               span.icon-bar
+               span.icon-bar
+               span.icon-bar
+             a.navbar-brand(href='/') Project name
+           .navbar-collapse.collapse
+               ul.nav.navbar-nav
+                 li.active
+                   a(href='/home') Home
+                 li
+                   a(href='/#about') About
+                 li
+                   a(href='./') Contact
+                 li.dropdown
+                   a.dropdown-toggle(href='#', data-toggle='dropdown')
+                     | Dropdown
+                     span.caret
+                   ul.dropdown-menu(role='menu')
+                     li
+                       a(href='/#') Action
+                     li
+                       a(href='/#') Another action
+                     li
+                       a(href='/#') Something else here
+                     li.divider
+                     li.dropdown-header Nav header
+                     li
+                       a(href='/#') Separated link
+                     li
+                      a(href='/#') One more separated link
+
+   #myCarousel.carousel.slide(data-ride='carousel')
+     ol.carousel-indicators
+         li(data-target='#myCarousel', data-slide-to='0')
+         li(data-target='#myCarousel', data-slide-to='1')
+         li.active(data-target='#myCarousel', data-slide-to='2')
+     .carousel-inner
+       .item
+         img(src='./image/1.jpg', style='width: 1300px; height: 500px;',alt='First slide')
+         .container
+           .carousel-caption
+             h1 Example headline.
+             p
+               | Note: If you're viewing this page via a
+               code file://
+               | URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+             p
+               a.btn.btn-lg.btn-primary(href='/home', role='button') Sign up today
+       .item
+         img(src='./image/2.jpg', alt='Second slide',style='width: 1300px; height: 500px;')
+         .container
+           .carousel-caption
+             h1 一点开始
+             p
+               | 如果说，数据是一起事实都表象，那你就一点开始，只需一点，开始了……
+             p
+               a.btn.btn-lg.btn-primary(href='#', role='button') 下载应用
+       .item.active
+           img(src='./image/3.jpg', alt='Third slide',style='width: 1300px; height: 500px;')
+           .container
+             .carousel-caption
+               h1 未来不容腐蚀.
+               p
+                 | 未来不容忽视，未来不容腐蚀，保护我们的未来，从现在开始.
+                 | 八九点升起的应该是太阳。  
+               p
+                 a.btn.btn-lg.btn-primary(href='#', role='button') 学习更多
+      a.left.carousel-control(href='./index#myCarousel', role='button', data-slide='prev')
+         span.glyphicon.glyphicon-chevron-left
+      a.right.carousel-control(href='./index#myCarousel', role='button', data-slide='next')
+         span.glyphicon.glyphicon-chevron-right
+ 
+   .container.marketing
+     .row
+       .col-lg-4
+         img.img-circle(src='./image/4.jpg', alt='Generic placeholder image', style='width: 140px; height: 140px;')
+         h2 Heading
+         p
+           | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+         p
+           a.btn.btn-default(href='http://v3.bootcss.com/examples/carousel/#', role='button') View details »
+       .col-lg-4
+         img.img-circle(src='./image/5.jpg', alt='Generic placeholder image', style='width: 140px; height: 140px;')
+         h2 Heading
+         p
+           | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+         p
+           a.btn.btn-default(href='http://v3.bootcss.com/examples/carousel/#', role='button') View details »
+       .col-lg-4
+         img.img-circle(src='./image/6.jpg', alt='Generic placeholder image', style='width: 140px; height: 140px;')
+         h2 Heading
+         p
+           | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+         p
+           a.btn.btn-default(href='http://v3.bootcss.com/examples/carousel/#', role='button') View details »
+     hr.featurette-divider
+     .row.featurette
+       .col-md-7
+         h2.featurette-heading
+           | First featurette heading.
+           span.text-muted It'll blow your mind.
+         p.lead
+           | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+       .col-md-5
+         img.featurette-image.img-responsive( alt='500x500', src='./image/7.jpg')
+     hr.featurette-divider
+     .row.featurette
+       .col-md-5
+         img.featurette-image.img-responsive( alt='500x500', src='./image/8.jpg')
+       .col-md-7
+         h2.featurette-heading
+           | Oh yeah, it's that good.
+           span.text-muted See for yourself.
+         p.lead
+           | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+     hr.featurette-divider
+     .row.featurette
+       .col-md-7
+         h2.featurette-heading
+           | And lastly, this one.
+           span.text-muted Checkmate.
+         p.lead
+           | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+       .col-md-5
+         img.featurette-image.img-responsive( alt='500x500', src='./image/9.jpg')
+     hr.featurette-divider
+     footer
+       p.pull-right
+         a(href='./index') Back to top
+       address
+           a(href="mailto:zwl0017@163.com") chunyu.zhao 
+        p
+         | © 2014 根辉建煌, Inc. ·
+         a(href='http://v3.bootcss.com/examples/carousel/#') Privacy
+         | ·
+         a(href='http://v3.bootcss.com/examples/carousel/#') Terms
+   script(src='./dist/js/jquery.min.js')
+   script(src='./dist/js/bootstrap.min.js')
+   script(src='./dist/js/docs.min.js')
+#global-zeroclipboard-html-bridge.global-zeroclipboard-container(title='', style='position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;', data-original-title='Copy to clipboard')
+  object#global-zeroclipboard-flash-bridge(classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000', width='100%', height='100%')
+    param(name='movie', value='/assets/flash/ZeroClipboard.swf?noCache=1404204257271')
+    param(name='allowScriptAccess', value='sameDomain')
+    param(name='scale', value='exactfit')
+    param(name='loop', value='false')
+    param(name='menu', value='false')
+    param(name='quality', value='best')
+    param(name='bgcolor', value='#ffffff')
+    param(name='wmode', value='transparent')
+    param(name='flashvars', value='trustedOrigins=v3.bootcss.com%2C%2F%2Fv3.bootcss.com%2Chttp%3A%2F%2Fv3.bootcss.com')
+    embed(src='/assets/flash/ZeroClipboard.swf?noCache=1404204257271', loop='false', menu='false', quality='best', bgcolor='#ffffff', width='100%', height='100%', name='global-zeroclipboard-flash-bridge', allowscriptaccess='sameDomain', allowfullscreen='false', type='application/x-shockwave-flash', wmode='transparent', pluginspage='http://www.macromedia.com/go/getflashplayer', flashvars='trustedOrigins=v3.bootcss.com%2C%2F%2Fv3.bootcss.com%2Chttp%3A%2F%2Fv3.bootcss.com', scale='exactfit')
+    
