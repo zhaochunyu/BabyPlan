@@ -7,7 +7,7 @@ html(lang='en')
     meta(name='description', content='')
     meta(name='author', content='')
     link(rel='icon', href='image/favicon.ico')
-    title Carousel Template for Bootstrap
+    title BabyPlan
     link(href='dist/css/bootstrap.min.css', rel='stylesheet')
     script(src='dist/js/ie8-responsive-file-warning.js')
     script(src='dist/js/ie-emulation-modes-warning.js')
@@ -16,7 +16,7 @@ html(lang='en')
  body
    .navbar-wrapper
      .container
-       .navbar.navbar-inverse.navbar-static-top(role='navigation')
+       .navbar.navbar-default.navbar-collapse.navbar-fixed-top(role='navigation')(stye="filter:alpha(opacity=50); -moz-opacity:0.5;-khtml-opacity: 0.5; opacity: 0.5; ")
          .container
            .navbar-header
              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -24,18 +24,18 @@ html(lang='en')
                span.icon-bar
                span.icon-bar
                span.icon-bar
-             a.navbar-brand(href='/') Project name
+             a.navbar-brand(href='/') BabyPlan
            .navbar-collapse.collapse
                ul.nav.navbar-nav
                  li.active
-                   a(href='/home') Home
+                   a(href='/home') 主页
                  li
-                   a(href='/#about') About
+                   a(href='/#about') 下载
                  li
-                   a(href='./') Contact
+                   a(href='./') 内容
                  li.dropdown
                    a.dropdown-toggle(href='#', data-toggle='dropdown')
-                     | Dropdown
+                     | 关于
                      span.caret
                    ul.dropdown-menu(role='menu')
                      li
@@ -50,43 +50,52 @@ html(lang='en')
                        a(href='/#') Separated link
                      li
                       a(href='/#') One more separated link
+               ul.nav.navbar-nav.navbar-right
+                 li
+                   a(href='../navbar/') Default
+                 li
+                   a(href='../navbar-static-top/') Static top
+                 li.active
+                   a(href='./') Fixed top
 
    #myCarousel.carousel.slide(data-ride='carousel')
      ol.carousel-indicators
-         li(data-target='#myCarousel', data-slide-to='0')
+         li.active(data-target='#myCarousel', data-slide-to='0')
          li(data-target='#myCarousel', data-slide-to='1')
-         li.active(data-target='#myCarousel', data-slide-to='2')
+         li(data-target='#myCarousel', data-slide-to='2')
      .carousel-inner
-       .item
+       .item.active
          img(src='./image/1.jpg', style='width: 1300px; height: 500px;',alt='First slide')
          .container
            .carousel-caption
-             h1 Example headline.
+             h1 学习的诱惑.
              p
-               | Note: If you're viewing this page via a
-               code file://
-               | URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+               | 请放下你高傲的心态，虚心面对这美好的时间，将自己打造成栋梁。
+               code 我们还很年轻，还很简单。
+               | 我们活着，可以让世界更美好.
              p
-               a.btn.btn-lg.btn-primary(href='/home', role='button') Sign up today
+               a.btn.btn-lg.btn-primary(href='/home', role='button') 我要学习
        .item
          img(src='./image/2.jpg', alt='Second slide',style='width: 1300px; height: 500px;')
          .container
-           .carousel-caption
+           .carousel-caption(style="width: 400px; left: 120px;")
              h1 一点开始
              p
                | 如果说，数据是一起事实都表象，那你就一点开始，只需一点，开始了……
              p
                a.btn.btn-lg.btn-primary(href='#', role='button') 下载应用
-       .item.active
+       .item
            img(src='./image/3.jpg', alt='Third slide',style='width: 1300px; height: 500px;')
            .container
-             .carousel-caption
-               h1 未来不容腐蚀.
-               p
-                 | 未来不容忽视，未来不容腐蚀，保护我们的未来，从现在开始.
-                 | 八九点升起的应该是太阳。  
-               p
-                 a.btn.btn-lg.btn-primary(href='#', role='button') 学习更多
+            .carousel-caption
+              h1 学习的诱惑.
+              p
+                | 请放下你高傲的心态，虚心面对这美好的时间，将自己打造成栋梁。
+                code 我们还很年轻，还很简单。
+                | 我们活着，可以让世界更美好.
+              p
+                a.btn.btn-lg.btn-primary(href='/home', role='button') 我要学习
+
       a.left.carousel-control(href='./index#myCarousel', role='button', data-slide='prev')
          span.glyphicon.glyphicon-chevron-left
       a.right.carousel-control(href='./index#myCarousel', role='button', data-slide='next')
@@ -100,21 +109,21 @@ html(lang='en')
          p
            | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
          p
-           a.btn.btn-default(href='http://v3.bootcss.com/examples/carousel/#', role='button') View details »
+           a.btn.btn-default(href='#', role='button') View details »
        .col-lg-4
          img.img-circle(src='./image/5.jpg', alt='Generic placeholder image', style='width: 140px; height: 140px;')
          h2 Heading
          p
            | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
          p
-           a.btn.btn-default(href='http://v3.bootcss.com/examples/carousel/#', role='button') View details »
+           a.btn.btn-default(href=' #', role='button') View details »
        .col-lg-4
          img.img-circle(src='./image/6.jpg', alt='Generic placeholder image', style='width: 140px; height: 140px;')
          h2 Heading
          p
            | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
          p
-           a.btn.btn-default(href='http://v3.bootcss.com/examples/carousel/#', role='button') View details »
+           a.btn.btn-default(href=' #', role='button') View details »
      hr.featurette-divider
      .row.featurette
        .col-md-7
@@ -144,18 +153,18 @@ html(lang='en')
          p.lead
            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
        .col-md-5
-         img.featurette-image.img-responsive( alt='500x500', src='./image/9.jpg')
+         img.featurette-image.img-thumbnail( alt='500x500', src='./image/9.jpg')
      hr.featurette-divider
      footer
        p.pull-right
-         a(href='./index') Back to top
+         a(href='./index') 返回顶部
        address
            a(href="mailto:zwl0017@163.com") chunyu.zhao 
         p
-         | © 2014 根辉建煌, Inc. ·
-         a(href='http://v3.bootcss.com/examples/carousel/#') Privacy
+         | © 2014 毛毛虫科技
+         a(href='#') Privacy
          | ·
-         a(href='http://v3.bootcss.com/examples/carousel/#') Terms
+         a(href='#') Terms
    script(src='./dist/js/jquery.min.js')
    script(src='./dist/js/bootstrap.min.js')
    script(src='./dist/js/docs.min.js')
