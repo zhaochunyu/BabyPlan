@@ -24,24 +24,21 @@ html(lang='en')
                span.icon-bar
                span.icon-bar
                span.icon-bar
-             a.navbar-brand(href='/') BabyPlan
+             a.navbar-brand(href='/',style="margin-left: 45px;") BabyPlan
            .navbar-collapse.collapse
                ul.nav.navbar-nav
                  li.active
-                   a(href='/home') 主页
-                 li
-                   a(href='/#about') 下载
-                 li
-                   a(href='./') 内容
+                   a(href='/',style="border-left-width: 40px; border-right-width: 20px;") 主 页
+              
                  li.dropdown
-                   a.dropdown-toggle(href='#', data-toggle='dropdown')
-                     | 关于
+                   a.dropdown-toggle(href='#', data-toggle='dropdown',style="margin-left: 40px; margin-right: 30px;")
+                     | 下 载
                      span.caret
                    ul.dropdown-menu(role='menu')
                      li
-                       a(href='/#') Action
+                       a(href='/#') 下载受控端
                      li
-                       a(href='/#') Another action
+                       a(href='/#') 下载移动端
                      li
                        a(href='/#') Something else here
                      li.divider
@@ -50,13 +47,25 @@ html(lang='en')
                        a(href='/#') Separated link
                      li
                       a(href='/#') One more separated link
+                 li.dropdown
+                    a.dropdown-toggle(data-toggle="dropdown",href="",style="margin-left: 10px; margin-right: 40px;") 关 于
+                       span.caret
+                    ul.dropdown-menu(role='menu')
+                      li
+                       a(href='/#') 公司介绍
+                      li
+                       a(href='/#') 联系我们
+                      li
+                       a(href='/#') 服务协议
+                   
                ul.nav.navbar-nav.navbar-right
                  li
-                   a(href='../navbar/') Default
+                   a(href='/home') 登录
+                 li 
+                   p(style="margin-top: 15px;") |
                  li
-                   a(href='../navbar-static-top/') Static top
-                 li.active
-                   a(href='./') Fixed top
+                   a(href='/navbar-static-top/',style="margin-right: 55px;") 注 册
+                
 
    #myCarousel.carousel.slide(data-ride='carousel')
      ol.carousel-indicators
@@ -67,32 +76,33 @@ html(lang='en')
        .item.active
          img(src='./image/1.jpg', style='width: 1300px; height: 500px;',alt='First slide')
          .container
-           .carousel-caption
-             h1 学习的诱惑.
+           .carousel-caption(style="width: 400px; left: 120px;")
+             h1 BabyPlan
              p
-               | 请放下你高傲的心态，虚心面对这美好的时间，将自己打造成栋梁。
-               code 我们还很年轻，还很简单。
-               | 我们活着，可以让世界更美好.
+               | 一个让你放心的儿童时光.
+               br
+               |一个让你安心的幸福童年.
              p
-               a.btn.btn-lg.btn-primary(href='/home', role='button') 我要学习
+               a.btn.btn-lg.btn-primary(href='/home', role='button') 了解更多
        .item
          img(src='./image/2.jpg', alt='Second slide',style='width: 1300px; height: 500px;')
          .container
            .carousel-caption(style="width: 400px; left: 120px;")
              h1 一点开始
              p
-               | 如果说，数据是一起事实都表象，那你就一点开始，只需一点，开始了……
+               | 只需三步，一切尽在掌控中，
+               |<br>简单一点，开始了……
              p
                a.btn.btn-lg.btn-primary(href='#', role='button') 下载应用
        .item
            img(src='./image/3.jpg', alt='Third slide',style='width: 1300px; height: 500px;')
            .container
             .carousel-caption
-              h1 学习的诱惑.
+              h1 时 间
               p
-                | 请放下你高傲的心态，虚心面对这美好的时间，将自己打造成栋梁。
-                code 我们还很年轻，还很简单。
-                | 我们活着，可以让世界更美好.
+                | 时间是最美好的东西，它能带来你想要的一切。
+                | <br> 请好好珍惜！
+                |<br>  时间会将你的所有都带走。
               p
                 a.btn.btn-lg.btn-primary(href='/home', role='button') 我要学习
 
@@ -128,10 +138,11 @@ html(lang='en')
      .row.featurette
        .col-md-7
          h2.featurette-heading
-           | First featurette heading.
-           span.text-muted It'll blow your mind.
+           span.text-muted BabyPlan.
          p.lead
-           | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+           | BabyPlan是一款电脑管理软件，面向未成年，<br>
+           | 在移动端安装app，或通过浏览器登录，<br>
+           | 就可以轻易的实现所监管电脑的网络、游戏、开关机的控制。
        .col-md-5
          img.featurette-image.img-responsive( alt='500x500', src='./image/7.jpg')
      hr.featurette-divider
@@ -140,18 +151,20 @@ html(lang='en')
          img.featurette-image.img-responsive( alt='500x500', src='./image/8.jpg')
        .col-md-7
          h2.featurette-heading
-           | Oh yeah, it's that good.
-           span.text-muted See for yourself.
+           | 功能：
+           span.text-muted 为你而生.
          p.lead
-           | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+           | 软件功能主要包括：关机、锁屏、禁止上网、禁止网络游戏、禁止游戏等功能。
      hr.featurette-divider
      .row.featurette
        .col-md-7
          h2.featurette-heading
-           | And lastly, this one.
-           span.text-muted Checkmate.
+           | 简单的
+           span.text-muted 步骤.
          p.lead
-           | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+           | 第一步，在你需要管理的电脑上下载，安装。注册一个帐号。<br>
+           | 第二步，在移动端下载app，并登录自己刚才注册的帐号。<br>
+           | 第三步，登录app，点击按钮进行电脑控制。<br>
        .col-md-5
          img.featurette-image.img-thumbnail( alt='500x500', src='./image/9.jpg')
      hr.featurette-divider

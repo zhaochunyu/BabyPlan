@@ -22,15 +22,20 @@ head(lang="zh-cn")
                     ui.nav.navbar-nav
                        li: a(href="/index") 首页
                        li: a(href="/") 设置
+                       li: a(href="/") 操作日志
                        li.dropdown: a.dropdown-toggle(data-toggle="dropdown",href="") 帮 助
                                       b.caret
                                       ul.dropdown-menu
                                          li: a(href="/log/help.txt",target="_blank") 使用说明                                        
                                          li: a(href="/log/about.txt",target="_blank") 关于我们
                     ui.nav.navbar-nav.navbar-right
-                       li: a(href='/logout') 退出
-                       li: a 上次登录：2014年5月26日
-        block content
+                        li.dropdown: a.dropdown-toggle(data-toggle="dropdown") zwl0017@163.com
+                                      b.caret
+                                      ul.dropdown-menu
+                                         li: a(href='/logout') 设置                                                                            
+                                         li: a 前次：2014-7-8 11:15:06
+                        li: a(href='/logout') 退出 
+          block content
 
     div#footer
         div.container(align="center")
